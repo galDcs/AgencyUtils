@@ -1,0 +1,127 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Varela+Round&subset=hebrew');
+html, .page_header{
+	background: #f2f2f2;
+}
+* {
+    box-sizing: border-box;
+}
+li,span,h1,h2,h3,b,div,body,html{
+	font-family: 'Varela Round', sans-serif;
+}
+
+/* Create three columns of equal width */
+.columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+}
+
+/* Style the list */
+.price {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border: 1px solid #9E9E9E;
+    float: left;
+    width: 100%;
+}
+
+    /* Add shadows on hover */
+    .price:hover {
+        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+    }
+
+    /* Pricing header */
+    .price .header {
+        /* padding: 50px; */
+        color: white;
+        font-size: 25px;
+        float: left;
+        width: 100%;
+        height: 100px;
+        height: 199px;
+    }
+
+    /* List items */
+    .price li {
+        border-bottom: 1px solid #eee;
+        /* padding: 20px; */
+        text-align: center;
+        background: #fff;
+        float: left;
+        width: 100%;
+        line-height: 22px;
+    }
+
+    /* Grey list item */
+    .price .grey {
+        background-color: #eee;
+        font-size: 20px;
+    }
+
+/* The "Sign Up" button */
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Change the width of the three columns to 100% 
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+    .columns {
+        width: 100%;
+    }
+}
+.details{
+	
+}
+.details .detail {
+    width: 33.333%;
+    display: block;
+	float: left;
+}
+.detail .detail_header{
+	width: 100%;
+    display: block;
+	float: left;
+}
+.details {
+	padding:0!important;
+	/* min-height: 40px; */
+}
+.border_left{
+	border-right:1px solid gainsboro;
+}
+li.headline h1, li.headline b {
+    font-size: 16px!important;
+    font-weight: normal!important;
+	margin:0;
+}
+.headline {
+    height: 110px;
+}
+.page_header{
+	text-align: center;
+}
+.link {
+    width: 50%;
+    display: block;
+    float: left;
+    padding: 15px 0;
+}
+.center_vertical{
+	vertical-align: middle;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+.title_table{
+	width:100%;
+}

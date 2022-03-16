@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://web27.agency2000.co.il/Agency2000Ws_Test/agency2000ws.asmx?disco" filename="agency2000ws.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://web27.agency2000.co.il/Agency2000Ws_Test/agency2000ws.asmx?wsdl" filename="agency2000ws.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,800 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Heebo:300,400');
+*{
+     /* margin: 0;*/
+     /* padding: 0;*/
+    }
+body {   
+    margin: 0px !important;
+}
+p,span,h1,h2,h3,h4,h5, a, div {
+	font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    font-size: 16px;
+    color: #222;
+	font-weight: 400;
+}
+#page_content {}
+#header_top {
+	width: 1080px;
+    margin: 0 auto;
+    height: 85px;
+    max-width: 90%;
+    padding-top: 15px;
+}
+#header_top img{
+	max-height: 80px;
+    max-width: 100%;
+    height: auto;
+}
+#header_menu {
+	background: #1a396b;
+    width: 100%;
+    height: 46px;
+	box-shadow: 0px 3px 15px #000;
+    margin-bottom: 2px;
+}
+#main {
+	width: 100%;
+	background: #f2f2f2;
+	padding: 30px 0px;
+}
+.page_header {
+	font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#ContentPlaceHolder1_text1_div {
+	width: 1080px;
+    padding: 20px;
+    background: white;
+    margin: 30px auto;
+    max-width: 90%;
+    overflow: auto;
+}
+#text2_div {
+	width: 1080px;
+    padding: 20px;
+    background: white;
+    margin: 30px auto;
+	max-width: 90%;
+}
+#text3_div {
+	width: 1080px;
+    padding: 20px;
+    background: white;
+    margin: 0 auto;
+    max-width: 90%;
+    font-size: 18px;
+    color: #1a396b;
+    font-weight: 500;
+    text-align: center;
+}
+.main_text_div {
+    width: 1080px;
+    padding: 20px;
+    background: white;
+    margin: 30px auto;
+    max-width: 90%;
+    overflow: auto;
+}
+#footer {
+	width: 100%;
+    margin: 0 auto;
+    height: 200px;
+	/* background: #f2f2f2; */
+	border-top: 1px solid #ccc;
+	background: linear-gradient(to bottom, #f2f2f2 54%, #1a396b 112%);
+	 background-image: url(../images/beach1.jpg);
+    background-size: cover;
+}
+#header_top_left {
+	width: 20%;
+	float: left;
+	text-align: left;
+}
+#header_top_center { 
+	width: 60%;
+    float: left;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#header_top_center img
+{
+	height: 25px;
+}
+
+#header_top_right {
+	width: 20%;
+	float: left;
+	text-align: right;
+	padding-top: 10px;
+}
+#header_menu_center {
+	width: 1080px;
+    margin: 0 auto;
+	padding-top: 0px;
+	max-width: 100%;
+}
+#header_menu_center a {
+	color: white;
+    text-decoration: none;   
+    float: right;
+    font-size: 18px;
+    padding: 0px 15px;
+    border-left: 1px solid #aaa;
+    text-align: center;
+	line-height: 15px;
+	font-weight: 300;
+}
+#header_menu_center a:last-child {
+	border-left: 0px;
+	}
+#banner {
+	width: 100%;
+    height: 320px;
+    /*background-image: url(../images/beach1.jpg);*/
+	 background-image: url(../images/board-361516.jpg);
+    background-size: cover;
+    
+	}
+#banner_text
+{
+	font-size: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 130px;
+    text-shadow: 2px 2px #000;
+}
+#footer_menu {
+	width: 1080px;
+    margin: 0 auto;
+	padding-top: 5px;
+	height: 40px;
+	max-width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#footer_menu_center {
+	width: 500px;
+    margin: 0 auto;
+	padding-top: 5px;
+	max-width: 100%;
+	}
+#footer_menu_center a {
+	color: #fff;
+    text-decoration: none;
+    float: right;
+    font-size: 14px;
+    padding: 0px 10px;
+    border-left: 1px solid #aaa;
+    text-align: center;
+	font-weight: 300;
+}
+#footer_menu_center a:last-child {
+	border-left: 0px;
+	}
+#footer_bottom {
+	width: 1080px;
+    margin: 0 auto;
+    padding-top: 5px;
+    text-align: center;
+    color: white;
+    max-width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.text_image_left
+{
+	float: left;
+	width: 500px;
+	max-width: 100%;
+}
+#news_div {
+	    float: left;
+    background: #dedede;
+    width: 25%;
+    padding: 20px;
+	margin: 0 20px 0 0;
+}
+#news_div_head {
+	text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+	margin-bottom: 15px;
+}
+#news_div_text {
+	
+}
+.news_div_text_line {
+	border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.heading1 {
+	font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.side_menu {
+    float: right;
+    background: #1a396b;
+    width: 140px;
+    padding: 10px 0px;
+    margin: 0 0px 15px 20px;
+}
+.side_menu a{
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+.side_menu .side_menu_link {
+    padding: 5px 0px;
+    width: 100%;
+float: right;
+}
+.side_menu .side_menu_link:hover {
+        background: #224680;
+}
+
+/* details div */
+#details_div {
+}
+.details_name {
+	float: right;
+}
+
+.log_out_div {
+	float: left;
+}
+.log_out_div a {
+	color: #d80b0b;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.change_pass_div {
+	float: left;
+}
+.change_pass_div a{
+    text-decoration: none;
+    margin-right: 20px;
+}
+/* end details div */
+
+/*css for data display */
+
+
+.row_data{
+	width: 100%;
+    min-height: 40px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+	padding-top: 15px;
+	overflow: auto;
+}
+.data_div {
+	float: right;	
+}
+.row_6_cells .data_div {
+	width: 14%;
+    padding-left: 2%;
+}
+.row_7_cells .data_div {
+	width: 12%;
+    padding-left: 2%;
+}
+.row_auto_width .data_div {
+		width: auto;
+		margin-left: 2%;
+}
+.radio_div {
+	width: 35px !important;
+}
+.days_div .input_div {
+	/*padding-top: 10px;*/
+}
+.tag_div {
+	font-weight: bold;
+    min-height: 20px;
+    line-height: 15px;
+}
+.row_7_cells .tag_div {
+	min-height: 35px;
+}
+.input_div {
+	line-height: 13px;
+    padding: 5px 0;
+	/*color: white;*/
+}
+.input_div select, .input_div input[type="text"] {
+	width: 100%;
+	font-size: 16px;
+}
+.submit_button {
+	float: left;
+	min-width: 200px;
+}
+
+.submit_button input {
+	background: red;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.submit_button_voucher {
+    font-size: 16px;
+    padding: 10px 0px;
+    width: 20%;
+}
+
+.submit_button_voucher_cancel {
+    min-width: 120px;
+    background: red;
+    border: none;
+    float: left;
+    text-align: center;
+	color: white;
+}
+
+.submit_button_voucher_blue {
+    min-width: 145px;
+    border: none;
+    background: #1a396b;
+	color: white;
+}
+
+.emailText {
+	color: black;
+    min-width: 180px;
+    background: white;    
+}
+
+.before_last_line {
+	border-bottom: 0px solid #ccc;
+}
+
+.last_line {
+	border-bottom: 0px solid #ccc;
+}
+/* end css for data display */
+
+/* login */
+
+.login_div {
+	margin: 0 auto;
+    width: 200px;
+}
+.login_label_div {
+	text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
+.login_field_div {
+	
+}
+.login_field_div input {
+	width: 100%;
+    padding: 10px 0;
+	background: #f2f2f2;
+	border: 0px;
+	border: 1px solid #ccc;
+}
+.login_div input[type="submit"] {
+	background: red;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 40px;
+	width: 100%;
+	
+}
+
+.logout_div {
+	margin: 0 auto;
+    width: 200px;
+}
+.logout_label_div {
+	text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
+/* end login */
+
+/* results */
+#results_heading {
+	width: 100%;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #1a396b;
+    text-align: center;
+	
+}
+.hotel_line {
+	border-bottom: 0px;
+}
+.hotel_div {
+	box-shadow: 0 0 5px #ccc inset;
+    float: right;
+    /*height: 395px;*/
+    height: 290px;
+	margin: 0 0 0;
+    padding: 1% 2% 15px 2%;
+    width: 29.3333333%;
+}
+.hotel_div h2 {font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+	}
+.hotel_div img {
+    max-height: 180px;
+    height: 150px;
+    width: 100%;
+}
+.hotel_box {
+    float: right;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	line-height: 20px;
+}
+.room_price {
+    width: 35%;
+    height: auto;
+    padding: 0 0 0 0;
+    margin: -15px 0 0;
+    float: left;
+    text-align: left;
+    font-family: arial;
+}
+.room_name, .room_base {
+    width: 65%;
+    height: auto;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    float: right;
+    font-size: 16px;
+}
+.room_name {
+    font-weight: 500;
+}
+.starting_from {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    float: right;
+    font-size: 12px;
+}
+.priceB {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    float: right;
+}
+.more_room_types {
+    background: #ff5a00;
+    border-radius: 5px;
+    color: #fff;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0 0;
+    padding: 2px 0px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+.more_room_types a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+.order_now {
+    background: #1a396b;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0 0;
+    padding: 2px 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.order_now a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.select_room_line {
+	width: 100% !important;
+    padding: 0px !important;
+	float: right;
+	}
+.select_room_line .tag_div, .select_room_line .data_div {
+        width: 12%;
+    float: right;
+    margin-left: 2%;
+    padding-left: 0px;
+}
+.select_room_line .tag_div {
+	display: none;
+}
+
+/* end results */
+/* order */
+.room_row .data_div{
+	width: 90%;
+}
+.room_row .tag_div{
+		float: right;
+    padding: 4px 0 4px 30px;
+}
+.room_row .input_div{
+	    float: right;
+		margin-left: 8px;
+}
+.room_row .input_div select, .input_div input[type="text"]{
+	    width: 130px;
+    margin-left: 20px;
+}
+.room_row {
+	
+}
+.room_type {
+	font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.order_submit input {
+	background: #1a396b;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 25px;
+    width: 100%;
+}
+.pointer{
+	cursor:pointer;
+}
+.pointer:hover{
+	opacity:0.9;
+}
+.room_row .data_div {   
+    padding-left: 4%;
+}
+.order_input {
+	padding: 0px 0 10px;
+}
+/* end order */
+/* orders */
+.active_files_heading {
+	font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.active_files .data_div {
+    width: 11%;
+    padding-left: 1%;
+}
+.orders_line {
+	    width: 100% !important;
+	    padding: 0px !important;
+	    float: right;
+}	
+.orders_line .tag_div {
+	width: 12%;
+    float: right;	
+}	
+
+.orders_line .tag_div {
+	display: none;
+}
+.only_pc .tag_div {
+	display: block;
+}
+
+/* end orders */
+
+@media screen and (max-width: 800px) {
+	.text_image_left
+		{
+			width: auto !important;
+		}
+}
+@media screen and (max-width: 480px) {
+	#banner_text {
+    font-size: 26px;
+    margin: 0 auto;
+	}
+	#footer_menu {
+		height: 80px;
+	}
+	#header_top_left {
+	width: 20%;
+	}
+	#header_top_center { 
+		width: 40%;
+		    font-size: 15px;
+	}
+	#header_top_right {
+		width: 40%;
+		
+	}
+	
+	.data_div {
+		min-height: 60px;
+		margin-left: 0px;
+		margin-bottom: 10px;
+		min-width: 85px;
+	}
+	.row_auto_width .data_div {
+    max-width: 31%;
+	}
+	.input_div select {
+    max-width: 90%;
+	}
+	input[type="date"] {
+		width: 96%;
+	}
+	.row_auto_width .submit_button {
+		width: 100%;
+		max-width: 100%;
+	}
+	.hotel_div {
+		width: 90%;
+    padding: 5%;
+	}
+	.radio_div {
+    width: 40px !important;
+    min-width: 40px;
+	}
+	
+
+
+.orders_line {
+    width: 100% !important;
+    padding: 0px !important;
+    float: right;
+    border-bottom: 1px solid #ccc;
+	padding-top: 25px !important;
+}
+.orders_line  {
+    width: 100% !important;
+    padding: 0px !important;
+    float: right;
+    border-bottom: 1px dashed #ccc;
+	padding-top: 25px !important;
+}
+.active_files .orders_line:last-child {
+	border-bottom: 0px solid #ccc;
+}
+	.orders_line .tag_div {
+	display: block;
+	width: 100%;
+    float: right;
+	}
+	.only_pc {
+	display: none;
+	}	
+.room_row .tag_div {  width: 100%;}
+.room_row .input_div {  width: 40%;}
+.remark_div .data_div {
+	width: 100% !important;
+    max-width: 100%;}
+	.select_room_line .tag_div {
+	display: block;
+	width: 100%;
+    float: right;
+	}
+	.select_room_line {
+	    border-bottom: 1px dashed #ccc;
+    margin-bottom: 15px;
+	}
+	.select_room_line:last-child {
+	border-bottom: 0px solid #ccc;	
+	}
+	.text1 {margin-bottom: 15px;}
+.request_send .submit_button {width: 100% !important;}
+.side_menu { width: 100%; }
+.side_menu .side_menu_link {width: 50%;}
+.about_image_left {display: none;}
+#home_video {max-width: 100%;
+    padding: 0;}
+} /* mobile */
+.button-cursor{
+	cursor:pointer;
+	color:white;
+}
+.button-cursor:hover{
+	opacity:0.8;
+}
+fieldset{
+	border: 0;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+}
+#modal-header {
+	
+	text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+	margin-bottom: 15px;
+}
+#hotel-images {
+	margin-top: 15px;
+}
+#hotel-images img {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.about_image_left {
+    float: left;
+    width: 30%;
+    margin: 0 20px 20px 0;
+}
+#home_video {
+    width: 600px;
+    margin: 0 auto;
+    height: 337px;
+    background: #1a396b99;
+    padding: 30px;
+    border-radius: 20px 20px 0px 0px;
+}
+.ordButton {
+    background: #1a396b;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0 0;
+    padding: 2px 16px;
+    text-align: center;
+    cursor: pointer;
+}

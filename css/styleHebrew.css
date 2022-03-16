@@ -1,0 +1,442 @@
+﻿
+p, span, h1, h2, h3, h4, h5, a, div, select {
+    direction: rtl !important;
+}
+
+label{
+    text-align: right !important;
+	float: right !important;
+}
+
+.hebrew {
+	text-align: right !important;
+	float: right !important;
+	direction: rtl !important;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    direction: ltr !important;
+}
+
+.orderButton{
+	float: left !important;
+}
+.areas, .hotels  ,.check_in, .check_out, .guest ,.check {
+    float: right !important;
+}
+
+.hotel_div, .hotel_div_sale{
+	float: right !important;
+}
+
+.divRooms {
+    float: right !important;
+}
+
+.room_name, .room_base{
+	/* float: right; */
+	direction:rtl;
+}
+
+.room_price{
+	float: left;
+	direction:ltr;
+}
+
+.room_price_sale {
+    text-align: right;
+    float: inherit;
+    padding: 0% 3%;
+    direction: ltr;
+}
+
+div.hotels_search  {
+direction: ltr;
+}
+
+.header > img {
+    float: right;
+}
+
+.navbar-nav {
+direction: rtl;
+
+}
+#navbarNavAltMarkup {
+    direction: rtl;
+}
+.bg-light {
+    direction: rtl;
+}
+
+/* #login { */
+    /* float:left; */
+/* } */
+
+.room_english {
+    float:right;
+}
+.label_display {
+display:-webkit-inline-box;
+}
+
+.placeHolderEnglish {
+    direction:rtl;
+}
+
+.col-sm-1, .col-sm-2 , .col-sm-3{
+	float: right !important;
+	margin-right: 4px;
+}
+.b_search.col-sm-2.disablePading {
+    float: left!important;
+    margin: 0 20px;
+}
+
+.divCarousel {
+    float: right;
+    padding: 0 0 32px 0;
+}
+
+.row_6_cells .data_div {
+    float: right;
+}
+
+.BackToMainPage{
+	float: right;
+}
+
+
+a.ui-datepicker-next.ui-corner-all, a.ui-datepicker-prev.ui-corner-all.ui-state-disabled , a.ui-datepicker-prev.ui-corner-all{
+    margin: 0;
+}
+.order_now {
+    float: left;
+
+}
+.room_price {
+	text-align:left;
+}
+
+.row_products .hotel_div img {
+	float:right;
+	margin:0;
+}
+
+.order_now {
+    float: left;
+
+}
+.room_price {
+	text-align:left;
+}
+
+.divAttractionDetails {
+    float:right;
+    direction: rtl;
+}
+
+.divImagesSlider {
+    float:right;
+}
+
+.buy_tic_5, .buy_tic_6{
+    float:right;
+}
+
+
+.buy_head {
+    direction: rtl;
+    float: right;
+}
+
+.request_row .input_div select, .input_div input[type="text"], .input_div input[type="number"] {
+	margin-right: 0;
+    padding-left: 20px !important;
+}
+.room_english {
+    float: right;
+}
+
+.more_room_types {
+	float: right;
+}
+
+/*.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: right !important;
+}*/
+
+#flight .col-md-3 {
+    float: right !important;
+}
+
+.colorlib-form .form-group .form-field .icon {
+    left: 20px !important;
+    right: unset !important;
+}
+
+.select-selected:after {
+    left: 20px !important;
+    right: unset !important;
+}
+
+.hotel_div_2_in_row img {
+    float: right !important;
+}
+
+.hotel_div_2_in_row h2 {
+    float: left !important;
+	text-align: right !important;
+    /* margin: 0 0 0 1%; */
+}
+
+.hotel_div_2_in_row .hotel_box {
+    float: right !important;
+}
+
+.hotel_div_2_in_row .more_room_types {
+    float: left;
+}
+
+.room_price .supplier-netto div, .room_price .hotel-netto div, .room_price .price-brutto div {
+    float: right !important;
+}
+
+.room_price {
+    float: right !important;
+    text-align: right !important;
+}
+
+.accordion_Rooms_and_bases span {
+	text-align: right;
+    float: right !important;
+}
+
+.hotel_div_2_in_row img {
+    margin: 0 0 0 1% !important;
+}
+
+.btlike {
+    float: left !important;
+}
+
+.room_price span .room_prices {
+    float: right !important;
+}
+
+.total_price {
+    float: left;
+    font-size: large;
+    margin: 0 0 0 1% !important;
+}
+
+.labelHotel, .labelSort {
+    float: right !important;
+}
+
+.change_view div {
+    float: right !important;
+}
+
+.compare-supplier-details {
+    float: right !important;
+}
+
+.compare-all-suppliers-headers {
+    float: right !important;
+}
+
+#priceRange {
+    text-align: right;
+    direction: ltr !important;
+}
+
+.menu_header_agent {
+    float: left !important;
+}
+
+.menu_header_agent ul li {
+    float: left !important;
+}
+.col-xs-4, .col-xs-6 {
+    float: right !important;
+}
+
+.menu_header_pages {
+    float: right !important;
+}
+
+.menu_header_pages ul li {
+    float: right !important;
+}
+
+.hotel_div_2_in_row .order_now label {
+    text-align: center !important;
+}
+
+button, input, optgroup, select, textarea {
+    /* color: white !important; */
+}
+
+.header-agency-details, .voucher-supplier-details-header {
+    float: right !important;
+    text-align: right !important;
+}
+
+.company-logo-voucher{
+    float: left;
+    margin-top:1% !important;
+}
+
+.voucher-details-header {
+    float: left !important;
+}
+
+.voucher-details-content-text-passenger-header{
+    float: right !important;
+}
+
+.cancellation_days {
+    float: right;
+    text-align: right;
+}
+
+.hotel_box div {
+	text-align: right;
+}
+
+.room_data, .hotel_data {
+    float: right;
+	text-align: right;
+}
+
+.confirmation-header {
+	text-align: right !important;
+}
+
+.row_6_cells {
+    text-align: right;
+}
+
+.order_submit {
+	float: right;
+}
+
+.remarkL {
+	text-align: right;
+}
+
+.div_filters {
+    float: right !important;
+	/* margin: 0 3% 0 1% !important; */
+}
+
+.filter_option .filter_checkbox {
+	float: right;
+}
+
+.result_card  div {
+    float: right;
+}
+
+.flight_details div {
+	text-align: right !important;
+	float: right;
+}
+
+.direction {
+    padding: 0 1% 0 0 !important;
+    text-align: right;
+}
+
+.no_service:after {
+	left: 10px;
+    right: unset !important;
+}
+
+.filter_option .filter_checkbox {
+    float: right !important;
+}
+
+.filters_category_header {
+    text-align: right !important;
+}
+
+.autocomplete-location {
+	direction: rtl !important;
+}
+
+.search-field-timepicker {
+    direction: rtl !important;
+}
+
+.datepicker_custom {
+	direction: rtl !important;
+}
+
+.passenger-item input[type='button'], .passengers_text {
+    float: left !important;
+}
+
+
+.chosen_deal div, .chosen_deal span{
+	float: right;
+}
+
+.hotel_details {
+	text-align: right;
+}
+
+.dropup .dropdown-toggle::after {
+    float: left !important;
+}
+
+.result_sorting div, .result_sorting input {
+	float: right !important;
+}
+
+.result_sorting div label {
+    text-align: right !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: unset !important;
+    left: 1px;
+}
+
+#resultFilters .select2-container--default .select2-selection--single .select2-selection__rendered {
+    text-align: right;
+}
+
+.passenger_sum {
+    float: right !important;
+}
+
+.modal-content {
+    text-align: right;
+}
+
+#listPopularDest li, #listPopularDep li, #listIsraelAreas li {
+    float: right !important;
+}
+
+.row_data {
+    text-align: right;
+}
+
+.page-content { 
+	text-align: right;
+}
+
+.extra-brutto-row span{
+	float: right !important;
+}
+
+.hotel_div_2_in_row  .rooms_remarks h2 {
+	float: right !important;
+}
+
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9 {
+    float: right !important;
+}

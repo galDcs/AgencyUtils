@@ -1,0 +1,3359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateDocketFromSabreInAgency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iSabreJsonPnr" type="tns:SabreJsonPnr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SabreJsonPnr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PnrId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClerkId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocketId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompaniesToTickets" type="tns:ArrayOfCompaniesToTicket" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlightsDetails" type="tns:ArrayOfFlightDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravellersDetails" type="tns:ArrayOfTravellerSabre" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocketDetails" type="tns:DocketDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompaniesToTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompaniesToTicket" nillable="true" type="tns:CompaniesToTicket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompaniesToTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="flightCompanies" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ticketsNumbers" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravIdsToDetails" type="tns:ArrayOfSupplierVoucherDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSupplierVoucherDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SupplierVoucherDetails" nillable="true" type="tns:SupplierVoucherDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SupplierVoucherDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FlightsDetails" type="tns:ArrayOfFlightDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravId" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="TravIdInt" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketId" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravDob" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravPrefix" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="FreeText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GfxFreeText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommissionAmount" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseFare" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxAmount" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlightCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketingDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightDetails" nillable="true" type="tns:FlightDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FlightCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaidToSupplierId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTravellerSabre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TravellerSabre" nillable="true" type="tns:TravellerSabre" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TravellerSabre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dob" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocketDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocketType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BussinessClientId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocketDescribe" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateDocketFromSabreInAgencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDocketFromSabreInAgencyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirlineNameByCarrier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCarrier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirlineNameByCarrierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirlineNameByCarrierResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBspIdForSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBspIdForSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBspIdForSupplierResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPortIdByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAirPortSymbol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPortIdByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPortIdByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocketId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TravellerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CurrencyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCardType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditMethod" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentsNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReceiptResult" type="tns:CreateReceiptResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateReceiptResponce">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocketId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateCashReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocketId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TravellerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CurrencyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCardType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditMethod" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentsNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValueDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Asmahta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCashReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateCashReceiptResult" type="tns:CreateReceiptResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateInvoiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipulimPriceForSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="addId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipulimPriceForSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTipulimPriceForSupplierResult" type="tns:TipulimPriceResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TipulimPriceResponce">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceNetto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceBrutto" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ResourceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSecurityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PNRToDocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BundleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PNRToDocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PNRToDocketResult" type="tns:PNR2DocketResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PNR2DocketResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateTravellerMakatBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docketId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="travellerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNights" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="generalAreaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="makatNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTravellerMakatBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateTravellerMakatBalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hotel_rooms_check">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierPriceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SuppPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderRooms" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MakeOrder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoomTypeStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hotel_rooms_checkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hotel_rooms_checkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderFlightPrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BundleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderFlightPricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderFlightPricesResult" type="tns:FlightPriceValidateResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FlightPriceValidateResponce">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cancelFlightPrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BundleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelFlightPricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cancelFlightPricesResult" type="tns:FlightPriceValidateResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAsPdfByHtmlAndMetaData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringifiedHtml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HeadContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BaseUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BodyMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAsPdfByHtmlAndMetaDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendAsPdfByHtmlAndMetaDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAsPdfByHtmlAndCssRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringifiedHtml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CssRules" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BaseUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BodyMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAsPdfByHtmlAndCssRulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendAsPdfByHtmlAndCssRulesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAttractionInDocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iAgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTravellers" type="tns:ArrayOfAgencyTraveller" />
+            <s:element minOccurs="0" maxOccurs="1" name="iDocketId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAttractionPriceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCurrencyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iFromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="iToDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iIsVatZero" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="iLanguage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAgencyTraveller">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgencyTraveller" nillable="true" type="tns:AgencyTraveller" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyTraveller">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCardExpDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCardCVV" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMain" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravellerIdFromDb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Brutto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Netto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarkUp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subsid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravPay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Discount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Quantity" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateAttractionInDocketResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AmadeusPNRFlightTester">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AmadeusPNRFlightTesterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AmadeusPNRFlightTesterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AmadeusPNRFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iPnrResponse" type="tns:AmadeusRetrievePNRResponse" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSystemType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iClerkId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iDocketId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AmadeusRetrievePNRResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:FlightPNR_Result" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="jsonrpc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="officeId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ticketOfficeId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amadeusFirstNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="retrieveDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="retrieveTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pnrNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="travellers" type="tns:ArrayOfFlightPNR_Traveller" />
+          <s:element minOccurs="0" maxOccurs="1" name="products" type="tns:Products" />
+          <s:element minOccurs="0" maxOccurs="1" name="generalOptions" type="tns:ArrayOfFlightPNR_GeneralOption" />
+          <s:element minOccurs="0" maxOccurs="1" name="timeLimits" type="tns:FlightPNR_TimeLimits" />
+          <s:element minOccurs="0" maxOccurs="1" name="referenceReservationInfo" type="tns:ArrayOfFlightPNR_ReferenceReservationInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="remarks" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightPNR_Traveller">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightPNR_Traveller" nillable="true" type="tns:FlightPNR_Traveller" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_Traveller">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="travelerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Products">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="flightProducts" type="tns:ArrayOfFlightPNR_FlightProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightPNR_FlightProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightPNR_FlightProduct" nillable="true" type="tns:FlightPNR_FlightProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_FlightProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="refNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="companyPnr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legOrigin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legDestination" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="segment" type="tns:ArrayOfFlightPNR_Segment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightPNR_Segment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightPNR_Segment" nillable="true" type="tns:FlightPNR_Segment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_Segment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="segment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="depAirport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arrAirport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="depDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="depTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arrDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arrTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="alSuppIATA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="alFltNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="departTerminal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="checkInTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="class" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="equipment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightPNR_GeneralOption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightPNR_GeneralOption" nillable="true" type="tns:FlightPNR_GeneralOption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_GeneralOption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="optionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionRefType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optionRefValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="optiontatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_TimeLimits">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ticketing" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightPNR_ReferenceReservationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightPNR_ReferenceReservationInfo" nillable="true" type="tns:FlightPNR_ReferenceReservationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightPNR_ReferenceReservationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="passengerReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reservationProducts" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransportType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CancellationDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Days" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Policy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Supplier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Brutto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Netto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaidToSupplierId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Service">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Supplier">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceStatusId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VoucherStatus" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCreateVoucher" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CancellationDetails" type="tns:ArrayOfCancellationDetails" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TravellersAssociationIds" type="tns:ArrayOfString" />
+              <s:element minOccurs="1" maxOccurs="1" name="mBundleId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FromDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurrencyId" type="tns:eCurrency" />
+              <s:element minOccurs="1" maxOccurs="1" name="IncomeType" type="tns:eIncomeType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCancellationDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CancellationDetails" nillable="true" type="tns:CancellationDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="eCurrency">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="NIS" />
+          <s:enumeration value="USD" />
+          <s:enumeration value="EUR" />
+          <s:enumeration value="GBP" />
+          <s:enumeration value="PND" />
+          <s:enumeration value="DKK" />
+          <s:enumeration value="GRD" />
+          <s:enumeration value="CAD" />
+          <s:enumeration value="AUD" />
+          <s:enumeration value="JPY" />
+          <s:enumeration value="ATS" />
+          <s:enumeration value="NZD" />
+          <s:enumeration value="ESP" />
+          <s:enumeration value="ZAR" />
+          <s:enumeration value="SFR" />
+          <s:enumeration value="CEK" />
+          <s:enumeration value="CYP" />
+          <s:enumeration value="ESC" />
+          <s:enumeration value="RUB" />
+          <s:enumeration value="PTE" />
+          <s:enumeration value="PAR" />
+          <s:enumeration value="BEF" />
+          <s:enumeration value="ITL" />
+          <s:enumeration value="DIR" />
+          <s:enumeration value="THB" />
+          <s:enumeration value="CHF" />
+          <s:enumeration value="HRK" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="eIncomeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="COM_INC_VAT" />
+          <s:enumeration value="COM_PLUS_VAT" />
+          <s:enumeration value="COM_VAT_ZERO" />
+          <s:enumeration value="MU_INC_VAT" />
+          <s:enumeration value="MU_PLUS_VAT" />
+          <s:enumeration value="MU_VAT_ZERO" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="HotelService">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Hotels" type="tns:ArrayOfHotel" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfHotel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Hotel" nillable="true" type="tns:Hotel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Hotel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CompositionId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompositionName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BaseId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BaseName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoomTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoomTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoomsAmount" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Package">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Flight" type="tns:Flight" />
+              <s:element minOccurs="0" maxOccurs="1" name="Hotel" type="tns:Hotel" />
+              <s:element minOccurs="0" maxOccurs="1" name="AlpDocketId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HotelService" type="tns:HotelService" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Flight">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Flights" type="tns:ArrayOfFlightRow" />
+              <s:element minOccurs="0" maxOccurs="1" name="AlpDocketId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SourceType" type="tns:eSourceTypes" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlightRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlightRow" nillable="true" type="tns:FlightRow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlightRow">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BundleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PNR" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeparturePortName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartureTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartureTerminal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlightRouteType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ArrivalPortName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ArrivalDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="ArrivalTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ArrivalTerminal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SupplierId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LegOrder" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IncomeTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IntermediateLandings" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Miles" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Availability" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataResourceId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataRecievedDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataThruClerkId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeparturePortId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ArrivalPortId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyIdX" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AdultPrice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PortTax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChildPrice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfantPrice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SeniorPrice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AdditionalTax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionPercentageOverride" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nights" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlightPriceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalFlightId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlightType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DiscountPercent" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlightAdditionId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="eSourceTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Amadeus" />
+          <s:enumeration value="Alp" />
+          <s:enumeration value="GoGlobal" />
+          <s:enumeration value="Sabre" />
+          <s:enumeration value="Ofran" />
+          <s:enumeration value="Sixt" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Transport">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Type" type="tns:TransportType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Insurance">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="InsuranceTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InsuranceAddId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EntranceDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ExitDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataResourceId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataRecievedDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataThruClerkId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LegOrder" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionPercentageOverride" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Days" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SkiFromDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SkiToDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PolisaNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="AmadeusPNRFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AmadeusPNRFlightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFlightRowInDocketFunc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iRequest" type="tns:CreateFlightRowInDocketFunc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateFlightRowInDocketFunc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocketDetails" type="tns:DocketDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="Flights" type="tns:ArrayOfFlightRow" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traveller" type="tns:Traveller" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClerkId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocketId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Traveller">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgeGroupId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GenderId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CellPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DbId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AssociationId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketingDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReIssueTicketNumbers" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Brutto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Netto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Escorts" type="tns:ArrayOfEscort" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEscort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Escort" nillable="true" type="tns:Escort" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Escort">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Traveller">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IsMain" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateFlightRowInDocketFuncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFlightRowInDocketFuncResult" type="tns:CreateFlightRowInDocketFunc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFlightRowInDocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iFlights" type="tns:ArrayOfFlightRow" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTravellers" type="tns:Traveller" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSystemType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iClerkId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iDocketId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFlightRowInDocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFlightRowInDocketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageTester">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreatePackageTesterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePackageTesterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDocketWithServicesFromParams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAgencyDocketParams" nillable="true" type="tns:CreateAgencyDocketParams" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateAgencyDocketParams">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traveller" type="tns:Traveller" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClerkId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocketId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAddTravellers" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAddTravellersToServices" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Services" type="tns:ArrayOfService" />
+          <s:element minOccurs="1" maxOccurs="1" name="Language" type="tns:eLanguage" />
+          <s:element minOccurs="0" maxOccurs="1" name="PPackageId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Voucher" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocketDetails" type="tns:DocketDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfService">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Service" nillable="true" type="tns:Service" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="eLanguage">
+        <s:restriction base="s:string">
+          <s:enumeration value="Hebrew" />
+          <s:enumeration value="English" />
+          <s:enumeration value="Russian" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CreateDocketWithServicesFromParamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDocketWithServicesFromParamsResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDocketWithServices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iAgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTraveller" type="tns:Traveller" />
+            <s:element minOccurs="1" maxOccurs="1" name="iClerkId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iDocketId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iIsAddTravellers" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="iServices" type="tns:ArrayOfService" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLang" type="tns:eLanguage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDocketWithServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDocketWithServicesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMiniPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iAgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTraveller" type="tns:Traveller" />
+            <s:element minOccurs="1" maxOccurs="1" name="iClerkId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iDocketId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iIsAddTravellers" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="iServices" type="tns:ArrayOfService" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLang" type="tns:eLanguage" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPPackageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPackageType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMiniPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMiniPackageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iAgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTraveller" type="tns:Traveller" />
+            <s:element minOccurs="1" maxOccurs="1" name="iClerkId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="iDocketId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iIsAddTravellers" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="iServices" type="tns:ArrayOfService" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLang" type="tns:eLanguage" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPPackageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPackageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ioStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDocketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="noInUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iRestaurant" type="tns:MiniPrice" />
+            <s:element minOccurs="0" maxOccurs="1" name="iTransport" type="tns:Transport" />
+            <s:element minOccurs="0" maxOccurs="1" name="iGuide" type="tns:Guide" />
+            <s:element minOccurs="1" maxOccurs="1" name="Hotel" nillable="true" type="tns:Hotel" />
+            <s:element minOccurs="1" maxOccurs="1" name="HotelService" nillable="true" type="tns:HotelService" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCruise" type="tns:Cruise" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocketCreateFee" nillable="true" type="tns:DocketCreateFee" />
+            <s:element minOccurs="1" maxOccurs="1" name="CarRental" nillable="true" type="tns:CarRental" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFlight" type="tns:Flight" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFlightRow" type="tns:FlightRow" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPackage" type="tns:Package" />
+            <s:element minOccurs="0" maxOccurs="1" name="iOther" type="tns:Other" />
+            <s:element minOccurs="0" maxOccurs="1" name="iInsurance" type="tns:Insurance" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAgencyDocketParams" nillable="true" type="tns:CreateAgencyDocketParams" />
+            <s:element minOccurs="1" maxOccurs="1" name="iServiceType" type="tns:eServiceType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MiniPrice">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MiniPriceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FromTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ToTime" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Guide">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Type" type="tns:GuideType" />
+              <s:element minOccurs="0" maxOccurs="1" name="Language" type="tns:Language" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GuideType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Language">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cruise">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AlpDocketId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DocketCreateFee">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntranceDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntranceTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConfirmedBy" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataResourceId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataRecievedDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataUpdatedDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataThruClerkId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CommissionPercentageOverride" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CarRental">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BundleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CarRentalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Quantity" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OriginLocation" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DestinationLocation" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OriginCountryId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DestinationCountryId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CarGroupId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CarPrestigeLevelId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntranceDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntranceTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExitDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExitTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SupplierId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IncomeTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutomobileType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataResourceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataThruClarkId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataRecivedDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LegOrder" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionPrecentageOverride" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nights" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OriginStationId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DestinationStationId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CarDoors" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CarPax" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SourceType" type="tns:eSourceTypes" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Other">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Service">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="bundle_id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="entrance_date" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="entrance_time" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="exit_date" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="exit_time" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="confirmed_by" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="destination_location" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="departure_location" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="order_number" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="currency_id" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="supplier_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="paid_to_supplier_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="service_status_id" type="s:short" />
+              <s:element minOccurs="1" maxOccurs="1" name="income_type_id" type="s:short" />
+              <s:element minOccurs="1" maxOccurs="1" name="payment_type_id" type="s:short" />
+              <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="data_resource_id" type="s:unsignedByte" />
+              <s:element minOccurs="0" maxOccurs="1" name="data_recieved_date" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="data_thru_clerk_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="commission_percentage_override" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="nights" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="gov_4and5tipulim_selected" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="eServiceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Flight" />
+          <s:enumeration value="Hotel" />
+          <s:enumeration value="Insurance" />
+          <s:enumeration value="Tour" />
+          <s:enumeration value="Other" />
+          <s:enumeration value="Restaurants" />
+          <s:enumeration value="Guide" />
+          <s:enumeration value="Transports" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="noInUseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSupplierIdByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCommissionValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iServiceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCarrier" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSourceType" type="tns:eSourceTypes" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierCodeFromOutService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iGoGlobalCityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierIdByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierIdByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierIdByNamePro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCommissionValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iServiceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCarrier" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iSourceType" type="tns:eSourceTypes" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierCodeFromOutService" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iGoGlobalCityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAccountCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierIdByNameProResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierIdByNameProResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotelRoomTypeIdByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iRoomType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLanguage" type="tns:eLanguage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotelRoomTypeIdByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHotelRoomTypeIdByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="CreateReceiptResponce" nillable="true" type="tns:CreateReceiptResponce" />
+      <s:element name="TipulimPriceResponce" nillable="true" type="tns:TipulimPriceResponce" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="PNR2DocketResponse" nillable="true" type="tns:PNR2DocketResponse" />
+      <s:element name="FlightPriceValidateResponce" nillable="true" type="tns:FlightPriceValidateResponce" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateDocketFromSabreInAgencySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDocketFromSabreInAgency" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketFromSabreInAgencySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDocketFromSabreInAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlineNameByCarrierSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirlineNameByCarrier" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlineNameByCarrierSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirlineNameByCarrierResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBspIdForSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBspIdForSupplier" />
+  </wsdl:message>
+  <wsdl:message name="GetBspIdForSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBspIdForSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPortIdByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPortIdByName" />
+  </wsdl:message>
+  <wsdl:message name="GetPortIdByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPortIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReceipt" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCashReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateCashReceipt" />
+  </wsdl:message>
+  <wsdl:message name="CreateCashReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateCashReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTipulimPriceForSupplier" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTipulimPriceForSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSecurity" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketSoapIn">
+    <wsdl:part name="parameters" element="tns:PNRToDocket" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketSoapOut">
+    <wsdl:part name="parameters" element="tns:PNRToDocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTravellerMakatBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:updateTravellerMakatBalance" />
+  </wsdl:message>
+  <wsdl:message name="updateTravellerMakatBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:updateTravellerMakatBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="hotel_rooms_checkSoapIn">
+    <wsdl:part name="parameters" element="tns:hotel_rooms_check" />
+  </wsdl:message>
+  <wsdl:message name="hotel_rooms_checkSoapOut">
+    <wsdl:part name="parameters" element="tns:hotel_rooms_checkResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderFlightPricesSoapIn">
+    <wsdl:part name="parameters" element="tns:orderFlightPrices" />
+  </wsdl:message>
+  <wsdl:message name="orderFlightPricesSoapOut">
+    <wsdl:part name="parameters" element="tns:orderFlightPricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightPricesSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelFlightPrices" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightPricesSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelFlightPricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndMetaDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SendAsPdfByHtmlAndMetaData" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndMetaDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SendAsPdfByHtmlAndMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndCssRulesSoapIn">
+    <wsdl:part name="parameters" element="tns:SendAsPdfByHtmlAndCssRules" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndCssRulesSoapOut">
+    <wsdl:part name="parameters" element="tns:SendAsPdfByHtmlAndCssRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAttractionInDocketSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAttractionInDocket" />
+  </wsdl:message>
+  <wsdl:message name="CreateAttractionInDocketSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAttractionInDocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightTesterSoapIn">
+    <wsdl:part name="parameters" element="tns:AmadeusPNRFlightTester" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightTesterSoapOut">
+    <wsdl:part name="parameters" element="tns:AmadeusPNRFlightTesterResponse" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:AmadeusPNRFlight" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:AmadeusPNRFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFlightRowInDocketFuncSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFlightRowInDocketFunc" />
+  </wsdl:message>
+  <wsdl:message name="CreateFlightRowInDocketFuncSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFlightRowInDocketFuncResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFlightRowInDocketSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFlightRowInDocket" />
+  </wsdl:message>
+  <wsdl:message name="CreateFlightRowInDocketSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFlightRowInDocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageTesterSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePackageTester" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageTesterSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePackageTesterResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketWithServicesFromParamsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDocketWithServicesFromParams" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketWithServicesFromParamsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDocketWithServicesFromParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketWithServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDocketWithServices" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketWithServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDocketWithServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMiniPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMiniPackage" />
+  </wsdl:message>
+  <wsdl:message name="CreateMiniPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMiniPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDocket" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="noInUseSoapIn">
+    <wsdl:part name="parameters" element="tns:noInUse" />
+  </wsdl:message>
+  <wsdl:message name="noInUseSoapOut">
+    <wsdl:part name="parameters" element="tns:noInUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierIdByName" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameProSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierIdByNamePro" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameProSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierIdByNameProResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelRoomTypeIdByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHotelRoomTypeIdByName" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelRoomTypeIdByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHotelRoomTypeIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlineNameByCarrierHttpGetIn">
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iUserName" type="s:string" />
+    <wsdl:part name="iCarrier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlineNameByCarrierHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBspIdForSupplierHttpGetIn">
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iUserName" type="s:string" />
+    <wsdl:part name="iSupplierId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBspIdForSupplierHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPortIdByNameHttpGetIn">
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iUserName" type="s:string" />
+    <wsdl:part name="iAirPortSymbol" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPortIdByNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="UserPassword" type="s:string" />
+    <wsdl:part name="DocketId" type="s:string" />
+    <wsdl:part name="TravellerId" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="TotalAmount" type="s:string" />
+    <wsdl:part name="CurrencyId" type="s:string" />
+    <wsdl:part name="CreditCardNumber" type="s:string" />
+    <wsdl:part name="ExpDate" type="s:string" />
+    <wsdl:part name="CVV" type="s:string" />
+    <wsdl:part name="CreditCardType" type="s:string" />
+    <wsdl:part name="CreditMethod" type="s:string" />
+    <wsdl:part name="CreditTypeId" type="s:string" />
+    <wsdl:part name="CustomerName" type="s:string" />
+    <wsdl:part name="PaymentsNumber" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="ReferenceNumber" type="s:string" />
+    <wsdl:part name="VoucherNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpGetOut">
+    <wsdl:part name="Body" element="tns:CreateReceiptResponce" />
+  </wsdl:message>
+  <wsdl:message name="CreateCashReceiptHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="UserPassword" type="s:string" />
+    <wsdl:part name="DocketId" type="s:string" />
+    <wsdl:part name="TravellerId" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="TotalAmount" type="s:string" />
+    <wsdl:part name="CurrencyId" type="s:string" />
+    <wsdl:part name="CreditCardNumber" type="s:string" />
+    <wsdl:part name="ExpDate" type="s:string" />
+    <wsdl:part name="CVV" type="s:string" />
+    <wsdl:part name="CreditCardType" type="s:string" />
+    <wsdl:part name="CreditMethod" type="s:string" />
+    <wsdl:part name="CreditTypeId" type="s:string" />
+    <wsdl:part name="CustomerName" type="s:string" />
+    <wsdl:part name="PaymentsNumber" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="ReferenceNumber" type="s:string" />
+    <wsdl:part name="VoucherNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="ValueDate" type="s:string" />
+    <wsdl:part name="Asmahta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateCashReceiptHttpGetOut">
+    <wsdl:part name="Body" element="tns:CreateReceiptResponce" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceHttpGetIn">
+    <wsdl:part name="InvoiceXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="supplierId" type="s:string" />
+    <wsdl:part name="addId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpGetOut">
+    <wsdl:part name="Body" element="tns:TipulimPriceResponce" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ResourceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="LoginName" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpGetOut">
+    <wsdl:part name="Body" element="tns:PNR2DocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTravellerMakatBalanceHttpGetIn">
+    <wsdl:part name="docketId" type="s:string" />
+    <wsdl:part name="travellerId" type="s:string" />
+    <wsdl:part name="orderNights" type="s:string" />
+    <wsdl:part name="actionType" type="s:string" />
+    <wsdl:part name="generalAreaId" type="s:string" />
+    <wsdl:part name="makatNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateTravellerMakatBalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="hotel_rooms_checkHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="SupplierPriceID" type="s:string" />
+    <wsdl:part name="PriceID" type="s:string" />
+    <wsdl:part name="SuppPriceType" type="s:string" />
+    <wsdl:part name="OrderRooms" type="s:string" />
+    <wsdl:part name="FromDate" type="s:string" />
+    <wsdl:part name="ToDate" type="s:string" />
+    <wsdl:part name="MakeOrder" type="s:string" />
+    <wsdl:part name="RoomTypeStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hotel_rooms_checkHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="orderFlightPricesHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="orderFlightPricesHttpGetOut">
+    <wsdl:part name="Body" element="tns:FlightPriceValidateResponce" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightPricesHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightPricesHttpGetOut">
+    <wsdl:part name="Body" element="tns:FlightPriceValidateResponce" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndMetaDataHttpGetIn">
+    <wsdl:part name="StringifiedHtml" type="s:string" />
+    <wsdl:part name="HeadContent" type="s:string" />
+    <wsdl:part name="BaseUrl" type="s:string" />
+    <wsdl:part name="FromMail" type="s:string" />
+    <wsdl:part name="ToMail" type="s:string" />
+    <wsdl:part name="SubjectMail" type="s:string" />
+    <wsdl:part name="BodyMail" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndMetaDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndCssRulesHttpGetIn">
+    <wsdl:part name="StringifiedHtml" type="s:string" />
+    <wsdl:part name="CssRules" type="s:string" />
+    <wsdl:part name="BaseUrl" type="s:string" />
+    <wsdl:part name="FromMail" type="s:string" />
+    <wsdl:part name="ToMail" type="s:string" />
+    <wsdl:part name="SubjectMail" type="s:string" />
+    <wsdl:part name="BodyMail" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndCssRulesHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightTesterHttpGetIn">
+    <wsdl:part name="x" type="s:string" />
+    <wsdl:part name="pnr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightTesterHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageTesterHttpGetIn" />
+  <wsdl:message name="CreatePackageTesterHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameHttpGetIn">
+    <wsdl:part name="iCompanyName" type="s:string" />
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iCommissionValue" type="s:string" />
+    <wsdl:part name="iServiceType" type="s:string" />
+    <wsdl:part name="iCarrier" type="s:string" />
+    <wsdl:part name="iSourceType" type="s:string" />
+    <wsdl:part name="iSupplierCodeFromOutService" type="s:string" />
+    <wsdl:part name="iGoGlobalCityId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameProHttpGetIn">
+    <wsdl:part name="iCompanyName" type="s:string" />
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iCommissionValue" type="s:string" />
+    <wsdl:part name="iServiceType" type="s:string" />
+    <wsdl:part name="iCarrier" type="s:string" />
+    <wsdl:part name="iSourceType" type="s:string" />
+    <wsdl:part name="iSupplierCodeFromOutService" type="s:string" />
+    <wsdl:part name="iGoGlobalCityId" type="s:string" />
+    <wsdl:part name="iAccountCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameProHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelRoomTypeIdByNameHttpGetIn">
+    <wsdl:part name="iRoomType" type="s:string" />
+    <wsdl:part name="iLanguage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelRoomTypeIdByNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlineNameByCarrierHttpPostIn">
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iUserName" type="s:string" />
+    <wsdl:part name="iCarrier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlineNameByCarrierHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBspIdForSupplierHttpPostIn">
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iUserName" type="s:string" />
+    <wsdl:part name="iSupplierId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBspIdForSupplierHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPortIdByNameHttpPostIn">
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iUserName" type="s:string" />
+    <wsdl:part name="iAirPortSymbol" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPortIdByNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="UserPassword" type="s:string" />
+    <wsdl:part name="DocketId" type="s:string" />
+    <wsdl:part name="TravellerId" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="TotalAmount" type="s:string" />
+    <wsdl:part name="CurrencyId" type="s:string" />
+    <wsdl:part name="CreditCardNumber" type="s:string" />
+    <wsdl:part name="ExpDate" type="s:string" />
+    <wsdl:part name="CVV" type="s:string" />
+    <wsdl:part name="CreditCardType" type="s:string" />
+    <wsdl:part name="CreditMethod" type="s:string" />
+    <wsdl:part name="CreditTypeId" type="s:string" />
+    <wsdl:part name="CustomerName" type="s:string" />
+    <wsdl:part name="PaymentsNumber" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="ReferenceNumber" type="s:string" />
+    <wsdl:part name="VoucherNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreateReceiptResponce" />
+  </wsdl:message>
+  <wsdl:message name="CreateCashReceiptHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="UserPassword" type="s:string" />
+    <wsdl:part name="DocketId" type="s:string" />
+    <wsdl:part name="TravellerId" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="TotalAmount" type="s:string" />
+    <wsdl:part name="CurrencyId" type="s:string" />
+    <wsdl:part name="CreditCardNumber" type="s:string" />
+    <wsdl:part name="ExpDate" type="s:string" />
+    <wsdl:part name="CVV" type="s:string" />
+    <wsdl:part name="CreditCardType" type="s:string" />
+    <wsdl:part name="CreditMethod" type="s:string" />
+    <wsdl:part name="CreditTypeId" type="s:string" />
+    <wsdl:part name="CustomerName" type="s:string" />
+    <wsdl:part name="PaymentsNumber" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="ReferenceNumber" type="s:string" />
+    <wsdl:part name="VoucherNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="ValueDate" type="s:string" />
+    <wsdl:part name="Asmahta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateCashReceiptHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreateReceiptResponce" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceHttpPostIn">
+    <wsdl:part name="InvoiceXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateInvoiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="supplierId" type="s:string" />
+    <wsdl:part name="addId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpPostOut">
+    <wsdl:part name="Body" element="tns:TipulimPriceResponce" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ResourceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="LoginName" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpPostOut">
+    <wsdl:part name="Body" element="tns:PNR2DocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTravellerMakatBalanceHttpPostIn">
+    <wsdl:part name="docketId" type="s:string" />
+    <wsdl:part name="travellerId" type="s:string" />
+    <wsdl:part name="orderNights" type="s:string" />
+    <wsdl:part name="actionType" type="s:string" />
+    <wsdl:part name="generalAreaId" type="s:string" />
+    <wsdl:part name="makatNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateTravellerMakatBalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="hotel_rooms_checkHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="SupplierPriceID" type="s:string" />
+    <wsdl:part name="PriceID" type="s:string" />
+    <wsdl:part name="SuppPriceType" type="s:string" />
+    <wsdl:part name="OrderRooms" type="s:string" />
+    <wsdl:part name="FromDate" type="s:string" />
+    <wsdl:part name="ToDate" type="s:string" />
+    <wsdl:part name="MakeOrder" type="s:string" />
+    <wsdl:part name="RoomTypeStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hotel_rooms_checkHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="orderFlightPricesHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="orderFlightPricesHttpPostOut">
+    <wsdl:part name="Body" element="tns:FlightPriceValidateResponce" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightPricesHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightPricesHttpPostOut">
+    <wsdl:part name="Body" element="tns:FlightPriceValidateResponce" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndMetaDataHttpPostIn">
+    <wsdl:part name="StringifiedHtml" type="s:string" />
+    <wsdl:part name="HeadContent" type="s:string" />
+    <wsdl:part name="BaseUrl" type="s:string" />
+    <wsdl:part name="FromMail" type="s:string" />
+    <wsdl:part name="ToMail" type="s:string" />
+    <wsdl:part name="SubjectMail" type="s:string" />
+    <wsdl:part name="BodyMail" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndMetaDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndCssRulesHttpPostIn">
+    <wsdl:part name="StringifiedHtml" type="s:string" />
+    <wsdl:part name="CssRules" type="s:string" />
+    <wsdl:part name="BaseUrl" type="s:string" />
+    <wsdl:part name="FromMail" type="s:string" />
+    <wsdl:part name="ToMail" type="s:string" />
+    <wsdl:part name="SubjectMail" type="s:string" />
+    <wsdl:part name="BodyMail" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAsPdfByHtmlAndCssRulesHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightTesterHttpPostIn">
+    <wsdl:part name="x" type="s:string" />
+    <wsdl:part name="pnr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AmadeusPNRFlightTesterHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageTesterHttpPostIn" />
+  <wsdl:message name="CreatePackageTesterHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameHttpPostIn">
+    <wsdl:part name="iCompanyName" type="s:string" />
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iCommissionValue" type="s:string" />
+    <wsdl:part name="iServiceType" type="s:string" />
+    <wsdl:part name="iCarrier" type="s:string" />
+    <wsdl:part name="iSourceType" type="s:string" />
+    <wsdl:part name="iSupplierCodeFromOutService" type="s:string" />
+    <wsdl:part name="iGoGlobalCityId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameProHttpPostIn">
+    <wsdl:part name="iCompanyName" type="s:string" />
+    <wsdl:part name="iAgencyId" type="s:string" />
+    <wsdl:part name="iSystemType" type="s:string" />
+    <wsdl:part name="iCommissionValue" type="s:string" />
+    <wsdl:part name="iServiceType" type="s:string" />
+    <wsdl:part name="iCarrier" type="s:string" />
+    <wsdl:part name="iSourceType" type="s:string" />
+    <wsdl:part name="iSupplierCodeFromOutService" type="s:string" />
+    <wsdl:part name="iGoGlobalCityId" type="s:string" />
+    <wsdl:part name="iAccountCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierIdByNameProHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelRoomTypeIdByNameHttpPostIn">
+    <wsdl:part name="iRoomType" type="s:string" />
+    <wsdl:part name="iLanguage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelRoomTypeIdByNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Agency2000WSSoap">
+    <wsdl:operation name="CreateDocketFromSabreInAgency">
+      <wsdl:input message="tns:CreateDocketFromSabreInAgencySoapIn" />
+      <wsdl:output message="tns:CreateDocketFromSabreInAgencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <wsdl:input message="tns:GetAirlineNameByCarrierSoapIn" />
+      <wsdl:output message="tns:GetAirlineNameByCarrierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <wsdl:input message="tns:GetBspIdForSupplierSoapIn" />
+      <wsdl:output message="tns:GetBspIdForSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <wsdl:input message="tns:GetPortIdByNameSoapIn" />
+      <wsdl:output message="tns:GetPortIdByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptSoapIn" />
+      <wsdl:output message="tns:CreateReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <wsdl:input message="tns:CreateCashReceiptSoapIn" />
+      <wsdl:output message="tns:CreateCashReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <wsdl:input message="tns:CreateInvoiceSoapIn" />
+      <wsdl:output message="tns:CreateInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <wsdl:input message="tns:GetTipulimPriceForSupplierSoapIn" />
+      <wsdl:output message="tns:GetTipulimPriceForSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <wsdl:input message="tns:CheckSecuritySoapIn" />
+      <wsdl:output message="tns:CheckSecuritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <wsdl:input message="tns:PNRToDocketSoapIn" />
+      <wsdl:output message="tns:PNRToDocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <wsdl:input message="tns:updateTravellerMakatBalanceSoapIn" />
+      <wsdl:output message="tns:updateTravellerMakatBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <wsdl:input message="tns:hotel_rooms_checkSoapIn" />
+      <wsdl:output message="tns:hotel_rooms_checkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <wsdl:input message="tns:orderFlightPricesSoapIn" />
+      <wsdl:output message="tns:orderFlightPricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <wsdl:input message="tns:cancelFlightPricesSoapIn" />
+      <wsdl:output message="tns:cancelFlightPricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert an html tags to Pdf And Send it via mail.
+                                                    &lt;br/&gt;Recieve an html page/element and Metadata (all the content you wish to be in the head element, such as links to css files, fonts etc.) convert it to pdf and send it via mail.
+                                                    &lt;br/&gt;Returns true if the conversion was succesful.
+                                                    &lt;br/&gt;&lt;b&gt;&lt;u&gt;Params&lt;/u&gt;&lt;/b&gt;
+                                                    &lt;ul&gt;
+                                                      &lt;li&gt;
+                                                        StringifiedHtml - Html as a string.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        HeadContent - Metadata (all the content you wish to be in the head element, such as links to css files, fonts etc.) (Allowed Empty).
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BaseUrl - Allows the converter to resolve relative urls. Basically, baseUrl + relative image/css url = full absolute url.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        FromMail - The sender Mail adress
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        ToMail - The mail Reciepient 
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        SubjectMail - The mail's subject (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BodyMail - The mail's Content (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                    &lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendAsPdfByHtmlAndMetaDataSoapIn" />
+      <wsdl:output message="tns:SendAsPdfByHtmlAndMetaDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert an html tags to Pdf And Send it via mail.
+                                                    &lt;br/&gt;Recieve an html page/element and Css Rules, convert it to pdf and send it via mail.
+                                                    &lt;br/&gt;Returns true if the conversion was succesful.
+                                                    &lt;br/&gt;&lt;b&gt;&lt;u&gt;Params&lt;/u&gt;&lt;/b&gt;
+                                                    &lt;ul&gt;
+                                                      &lt;li&gt;
+                                                        StringifiedHtml - Html as a string.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        CssRules - CSS Rules (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BaseUrl - Allows the converter to resolve relative urls. Basically, baseUrl + relative image/css url = full absolute url. (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        FromMail - From Mail
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        ToMail - Mail Reciepient 
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        SubjectMail - The mail's subject (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BodyMail - The mail's Content (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                    &lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendAsPdfByHtmlAndCssRulesSoapIn" />
+      <wsdl:output message="tns:SendAsPdfByHtmlAndCssRulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttractionInDocket">
+      <wsdl:input message="tns:CreateAttractionInDocketSoapIn" />
+      <wsdl:output message="tns:CreateAttractionInDocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <wsdl:input message="tns:AmadeusPNRFlightTesterSoapIn" />
+      <wsdl:output message="tns:AmadeusPNRFlightTesterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlight">
+      <wsdl:input message="tns:AmadeusPNRFlightSoapIn" />
+      <wsdl:output message="tns:AmadeusPNRFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlightRowInDocketFunc">
+      <wsdl:input message="tns:CreateFlightRowInDocketFuncSoapIn" />
+      <wsdl:output message="tns:CreateFlightRowInDocketFuncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlightRowInDocket">
+      <wsdl:input message="tns:CreateFlightRowInDocketSoapIn" />
+      <wsdl:output message="tns:CreateFlightRowInDocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <wsdl:input message="tns:CreatePackageTesterSoapIn" />
+      <wsdl:output message="tns:CreatePackageTesterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocketWithServicesFromParams">
+      <wsdl:input message="tns:CreateDocketWithServicesFromParamsSoapIn" />
+      <wsdl:output message="tns:CreateDocketWithServicesFromParamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocketWithServices">
+      <wsdl:input message="tns:CreateDocketWithServicesSoapIn" />
+      <wsdl:output message="tns:CreateDocketWithServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMiniPackage">
+      <wsdl:input message="tns:CreateMiniPackageSoapIn" />
+      <wsdl:output message="tns:CreateMiniPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocket">
+      <wsdl:input message="tns:CreateDocketSoapIn" />
+      <wsdl:output message="tns:CreateDocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="noInUse">
+      <wsdl:input message="tns:noInUseSoapIn" />
+      <wsdl:output message="tns:noInUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <wsdl:input message="tns:GetSupplierIdByNameSoapIn" />
+      <wsdl:output message="tns:GetSupplierIdByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <wsdl:input message="tns:GetSupplierIdByNameProSoapIn" />
+      <wsdl:output message="tns:GetSupplierIdByNameProSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <wsdl:input message="tns:GetHotelRoomTypeIdByNameSoapIn" />
+      <wsdl:output message="tns:GetHotelRoomTypeIdByNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Agency2000WSHttpGet">
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <wsdl:input message="tns:GetAirlineNameByCarrierHttpGetIn" />
+      <wsdl:output message="tns:GetAirlineNameByCarrierHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <wsdl:input message="tns:GetBspIdForSupplierHttpGetIn" />
+      <wsdl:output message="tns:GetBspIdForSupplierHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <wsdl:input message="tns:GetPortIdByNameHttpGetIn" />
+      <wsdl:output message="tns:GetPortIdByNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptHttpGetIn" />
+      <wsdl:output message="tns:CreateReceiptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <wsdl:input message="tns:CreateCashReceiptHttpGetIn" />
+      <wsdl:output message="tns:CreateCashReceiptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <wsdl:input message="tns:CreateInvoiceHttpGetIn" />
+      <wsdl:output message="tns:CreateInvoiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <wsdl:input message="tns:GetTipulimPriceForSupplierHttpGetIn" />
+      <wsdl:output message="tns:GetTipulimPriceForSupplierHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <wsdl:input message="tns:CheckSecurityHttpGetIn" />
+      <wsdl:output message="tns:CheckSecurityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <wsdl:input message="tns:PNRToDocketHttpGetIn" />
+      <wsdl:output message="tns:PNRToDocketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <wsdl:input message="tns:updateTravellerMakatBalanceHttpGetIn" />
+      <wsdl:output message="tns:updateTravellerMakatBalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <wsdl:input message="tns:hotel_rooms_checkHttpGetIn" />
+      <wsdl:output message="tns:hotel_rooms_checkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <wsdl:input message="tns:orderFlightPricesHttpGetIn" />
+      <wsdl:output message="tns:orderFlightPricesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <wsdl:input message="tns:cancelFlightPricesHttpGetIn" />
+      <wsdl:output message="tns:cancelFlightPricesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert an html tags to Pdf And Send it via mail.
+                                                    &lt;br/&gt;Recieve an html page/element and Metadata (all the content you wish to be in the head element, such as links to css files, fonts etc.) convert it to pdf and send it via mail.
+                                                    &lt;br/&gt;Returns true if the conversion was succesful.
+                                                    &lt;br/&gt;&lt;b&gt;&lt;u&gt;Params&lt;/u&gt;&lt;/b&gt;
+                                                    &lt;ul&gt;
+                                                      &lt;li&gt;
+                                                        StringifiedHtml - Html as a string.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        HeadContent - Metadata (all the content you wish to be in the head element, such as links to css files, fonts etc.) (Allowed Empty).
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BaseUrl - Allows the converter to resolve relative urls. Basically, baseUrl + relative image/css url = full absolute url.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        FromMail - The sender Mail adress
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        ToMail - The mail Reciepient 
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        SubjectMail - The mail's subject (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BodyMail - The mail's Content (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                    &lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendAsPdfByHtmlAndMetaDataHttpGetIn" />
+      <wsdl:output message="tns:SendAsPdfByHtmlAndMetaDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert an html tags to Pdf And Send it via mail.
+                                                    &lt;br/&gt;Recieve an html page/element and Css Rules, convert it to pdf and send it via mail.
+                                                    &lt;br/&gt;Returns true if the conversion was succesful.
+                                                    &lt;br/&gt;&lt;b&gt;&lt;u&gt;Params&lt;/u&gt;&lt;/b&gt;
+                                                    &lt;ul&gt;
+                                                      &lt;li&gt;
+                                                        StringifiedHtml - Html as a string.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        CssRules - CSS Rules (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BaseUrl - Allows the converter to resolve relative urls. Basically, baseUrl + relative image/css url = full absolute url. (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        FromMail - From Mail
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        ToMail - Mail Reciepient 
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        SubjectMail - The mail's subject (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BodyMail - The mail's Content (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                    &lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendAsPdfByHtmlAndCssRulesHttpGetIn" />
+      <wsdl:output message="tns:SendAsPdfByHtmlAndCssRulesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <wsdl:input message="tns:AmadeusPNRFlightTesterHttpGetIn" />
+      <wsdl:output message="tns:AmadeusPNRFlightTesterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <wsdl:input message="tns:CreatePackageTesterHttpGetIn" />
+      <wsdl:output message="tns:CreatePackageTesterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <wsdl:input message="tns:GetSupplierIdByNameHttpGetIn" />
+      <wsdl:output message="tns:GetSupplierIdByNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <wsdl:input message="tns:GetSupplierIdByNameProHttpGetIn" />
+      <wsdl:output message="tns:GetSupplierIdByNameProHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <wsdl:input message="tns:GetHotelRoomTypeIdByNameHttpGetIn" />
+      <wsdl:output message="tns:GetHotelRoomTypeIdByNameHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Agency2000WSHttpPost">
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <wsdl:input message="tns:GetAirlineNameByCarrierHttpPostIn" />
+      <wsdl:output message="tns:GetAirlineNameByCarrierHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <wsdl:input message="tns:GetBspIdForSupplierHttpPostIn" />
+      <wsdl:output message="tns:GetBspIdForSupplierHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <wsdl:input message="tns:GetPortIdByNameHttpPostIn" />
+      <wsdl:output message="tns:GetPortIdByNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptHttpPostIn" />
+      <wsdl:output message="tns:CreateReceiptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <wsdl:input message="tns:CreateCashReceiptHttpPostIn" />
+      <wsdl:output message="tns:CreateCashReceiptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <wsdl:input message="tns:CreateInvoiceHttpPostIn" />
+      <wsdl:output message="tns:CreateInvoiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <wsdl:input message="tns:GetTipulimPriceForSupplierHttpPostIn" />
+      <wsdl:output message="tns:GetTipulimPriceForSupplierHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <wsdl:input message="tns:CheckSecurityHttpPostIn" />
+      <wsdl:output message="tns:CheckSecurityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <wsdl:input message="tns:PNRToDocketHttpPostIn" />
+      <wsdl:output message="tns:PNRToDocketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <wsdl:input message="tns:updateTravellerMakatBalanceHttpPostIn" />
+      <wsdl:output message="tns:updateTravellerMakatBalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <wsdl:input message="tns:hotel_rooms_checkHttpPostIn" />
+      <wsdl:output message="tns:hotel_rooms_checkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <wsdl:input message="tns:orderFlightPricesHttpPostIn" />
+      <wsdl:output message="tns:orderFlightPricesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <wsdl:input message="tns:cancelFlightPricesHttpPostIn" />
+      <wsdl:output message="tns:cancelFlightPricesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert an html tags to Pdf And Send it via mail.
+                                                    &lt;br/&gt;Recieve an html page/element and Metadata (all the content you wish to be in the head element, such as links to css files, fonts etc.) convert it to pdf and send it via mail.
+                                                    &lt;br/&gt;Returns true if the conversion was succesful.
+                                                    &lt;br/&gt;&lt;b&gt;&lt;u&gt;Params&lt;/u&gt;&lt;/b&gt;
+                                                    &lt;ul&gt;
+                                                      &lt;li&gt;
+                                                        StringifiedHtml - Html as a string.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        HeadContent - Metadata (all the content you wish to be in the head element, such as links to css files, fonts etc.) (Allowed Empty).
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BaseUrl - Allows the converter to resolve relative urls. Basically, baseUrl + relative image/css url = full absolute url.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        FromMail - The sender Mail adress
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        ToMail - The mail Reciepient 
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        SubjectMail - The mail's subject (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BodyMail - The mail's Content (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                    &lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendAsPdfByHtmlAndMetaDataHttpPostIn" />
+      <wsdl:output message="tns:SendAsPdfByHtmlAndMetaDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Convert an html tags to Pdf And Send it via mail.
+                                                    &lt;br/&gt;Recieve an html page/element and Css Rules, convert it to pdf and send it via mail.
+                                                    &lt;br/&gt;Returns true if the conversion was succesful.
+                                                    &lt;br/&gt;&lt;b&gt;&lt;u&gt;Params&lt;/u&gt;&lt;/b&gt;
+                                                    &lt;ul&gt;
+                                                      &lt;li&gt;
+                                                        StringifiedHtml - Html as a string.
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        CssRules - CSS Rules (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BaseUrl - Allows the converter to resolve relative urls. Basically, baseUrl + relative image/css url = full absolute url. (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        FromMail - From Mail
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        ToMail - Mail Reciepient 
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        SubjectMail - The mail's subject (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                      &lt;li&gt;
+                                                        BodyMail - The mail's Content (Allowed Empty)
+                                                      &lt;/li&gt;
+                                                    &lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendAsPdfByHtmlAndCssRulesHttpPostIn" />
+      <wsdl:output message="tns:SendAsPdfByHtmlAndCssRulesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <wsdl:input message="tns:AmadeusPNRFlightTesterHttpPostIn" />
+      <wsdl:output message="tns:AmadeusPNRFlightTesterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <wsdl:input message="tns:CreatePackageTesterHttpPostIn" />
+      <wsdl:output message="tns:CreatePackageTesterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <wsdl:input message="tns:GetSupplierIdByNameHttpPostIn" />
+      <wsdl:output message="tns:GetSupplierIdByNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <wsdl:input message="tns:GetSupplierIdByNameProHttpPostIn" />
+      <wsdl:output message="tns:GetSupplierIdByNameProHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <wsdl:input message="tns:GetHotelRoomTypeIdByNameHttpPostIn" />
+      <wsdl:output message="tns:GetHotelRoomTypeIdByNameHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Agency2000WSSoap" type="tns:Agency2000WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDocketFromSabreInAgency">
+      <soap:operation soapAction="http://tempuri.org/CreateDocketFromSabreInAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <soap:operation soapAction="http://tempuri.org/GetAirlineNameByCarrier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <soap:operation soapAction="http://tempuri.org/GetBspIdForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <soap:operation soapAction="http://tempuri.org/GetPortIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <soap:operation soapAction="http://tempuri.org/CreateReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <soap:operation soapAction="http://tempuri.org/CreateCashReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <soap:operation soapAction="http://tempuri.org/CreateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <soap:operation soapAction="http://tempuri.org/GetTipulimPriceForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <soap:operation soapAction="http://tempuri.org/CheckSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <soap:operation soapAction="http://tempuri.org/PNRToDocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <soap:operation soapAction="http://tempuri.org/updateTravellerMakatBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <soap:operation soapAction="http://tempuri.org/hotel_rooms_check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <soap:operation soapAction="http://tempuri.org/orderFlightPrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <soap:operation soapAction="http://tempuri.org/cancelFlightPrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <soap:operation soapAction="http://tempuri.org/SendAsPdfByHtmlAndMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <soap:operation soapAction="http://tempuri.org/SendAsPdfByHtmlAndCssRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttractionInDocket">
+      <soap:operation soapAction="http://tempuri.org/CreateAttractionInDocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <soap:operation soapAction="http://tempuri.org/AmadeusPNRFlightTester" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlight">
+      <soap:operation soapAction="http://tempuri.org/AmadeusPNRFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlightRowInDocketFunc">
+      <soap:operation soapAction="http://tempuri.org/CreateFlightRowInDocketFunc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlightRowInDocket">
+      <soap:operation soapAction="http://tempuri.org/CreateFlightRowInDocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <soap:operation soapAction="http://tempuri.org/CreatePackageTester" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocketWithServicesFromParams">
+      <soap:operation soapAction="http://tempuri.org/CreateDocketWithServicesFromParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocketWithServices">
+      <soap:operation soapAction="http://tempuri.org/CreateDocketWithServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMiniPackage">
+      <soap:operation soapAction="http://tempuri.org/CreateMiniPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocket">
+      <soap:operation soapAction="http://tempuri.org/CreateDocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="noInUse">
+      <soap:operation soapAction="http://tempuri.org/noInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <soap:operation soapAction="http://tempuri.org/GetSupplierIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <soap:operation soapAction="http://tempuri.org/GetSupplierIdByNamePro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <soap:operation soapAction="http://tempuri.org/GetHotelRoomTypeIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Agency2000WSSoap12" type="tns:Agency2000WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDocketFromSabreInAgency">
+      <soap12:operation soapAction="http://tempuri.org/CreateDocketFromSabreInAgency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <soap12:operation soapAction="http://tempuri.org/GetAirlineNameByCarrier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <soap12:operation soapAction="http://tempuri.org/GetBspIdForSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <soap12:operation soapAction="http://tempuri.org/GetPortIdByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <soap12:operation soapAction="http://tempuri.org/CreateReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <soap12:operation soapAction="http://tempuri.org/CreateCashReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <soap12:operation soapAction="http://tempuri.org/CreateInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <soap12:operation soapAction="http://tempuri.org/GetTipulimPriceForSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <soap12:operation soapAction="http://tempuri.org/CheckSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <soap12:operation soapAction="http://tempuri.org/PNRToDocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <soap12:operation soapAction="http://tempuri.org/updateTravellerMakatBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <soap12:operation soapAction="http://tempuri.org/hotel_rooms_check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <soap12:operation soapAction="http://tempuri.org/orderFlightPrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <soap12:operation soapAction="http://tempuri.org/cancelFlightPrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <soap12:operation soapAction="http://tempuri.org/SendAsPdfByHtmlAndMetaData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <soap12:operation soapAction="http://tempuri.org/SendAsPdfByHtmlAndCssRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttractionInDocket">
+      <soap12:operation soapAction="http://tempuri.org/CreateAttractionInDocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <soap12:operation soapAction="http://tempuri.org/AmadeusPNRFlightTester" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlight">
+      <soap12:operation soapAction="http://tempuri.org/AmadeusPNRFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlightRowInDocketFunc">
+      <soap12:operation soapAction="http://tempuri.org/CreateFlightRowInDocketFunc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlightRowInDocket">
+      <soap12:operation soapAction="http://tempuri.org/CreateFlightRowInDocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <soap12:operation soapAction="http://tempuri.org/CreatePackageTester" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocketWithServicesFromParams">
+      <soap12:operation soapAction="http://tempuri.org/CreateDocketWithServicesFromParams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocketWithServices">
+      <soap12:operation soapAction="http://tempuri.org/CreateDocketWithServices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMiniPackage">
+      <soap12:operation soapAction="http://tempuri.org/CreateMiniPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDocket">
+      <soap12:operation soapAction="http://tempuri.org/CreateDocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="noInUse">
+      <soap12:operation soapAction="http://tempuri.org/noInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <soap12:operation soapAction="http://tempuri.org/GetSupplierIdByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <soap12:operation soapAction="http://tempuri.org/GetSupplierIdByNamePro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <soap12:operation soapAction="http://tempuri.org/GetHotelRoomTypeIdByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Agency2000WSHttpGet" type="tns:Agency2000WSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <http:operation location="/GetAirlineNameByCarrier" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <http:operation location="/GetBspIdForSupplier" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <http:operation location="/GetPortIdByName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <http:operation location="/CreateReceipt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <http:operation location="/CreateCashReceipt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <http:operation location="/CreateInvoice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <http:operation location="/GetTipulimPriceForSupplier" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <http:operation location="/CheckSecurity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <http:operation location="/PNRToDocket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <http:operation location="/updateTravellerMakatBalance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <http:operation location="/hotel_rooms_check" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <http:operation location="/orderFlightPrices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <http:operation location="/cancelFlightPrices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <http:operation location="/SendAsPdfByHtmlAndMetaData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <http:operation location="/SendAsPdfByHtmlAndCssRules" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <http:operation location="/AmadeusPNRFlightTester" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <http:operation location="/CreatePackageTester" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <http:operation location="/GetSupplierIdByName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <http:operation location="/GetSupplierIdByNamePro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <http:operation location="/GetHotelRoomTypeIdByName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Agency2000WSHttpPost" type="tns:Agency2000WSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAirlineNameByCarrier">
+      <http:operation location="/GetAirlineNameByCarrier" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBspIdForSupplier">
+      <http:operation location="/GetBspIdForSupplier" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortIdByName">
+      <http:operation location="/GetPortIdByName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReceipt">
+      <http:operation location="/CreateReceipt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCashReceipt">
+      <http:operation location="/CreateCashReceipt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInvoice">
+      <http:operation location="/CreateInvoice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <http:operation location="/GetTipulimPriceForSupplier" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <http:operation location="/CheckSecurity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <http:operation location="/PNRToDocket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTravellerMakatBalance">
+      <http:operation location="/updateTravellerMakatBalance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hotel_rooms_check">
+      <http:operation location="/hotel_rooms_check" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderFlightPrices">
+      <http:operation location="/orderFlightPrices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlightPrices">
+      <http:operation location="/cancelFlightPrices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndMetaData">
+      <http:operation location="/SendAsPdfByHtmlAndMetaData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAsPdfByHtmlAndCssRules">
+      <http:operation location="/SendAsPdfByHtmlAndCssRules" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmadeusPNRFlightTester">
+      <http:operation location="/AmadeusPNRFlightTester" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageTester">
+      <http:operation location="/CreatePackageTester" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByName">
+      <http:operation location="/GetSupplierIdByName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierIdByNamePro">
+      <http:operation location="/GetSupplierIdByNamePro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelRoomTypeIdByName">
+      <http:operation location="/GetHotelRoomTypeIdByName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Agency2000WS">
+    <wsdl:port name="Agency2000WSSoap" binding="tns:Agency2000WSSoap">
+      <soap:address location="http://web27.agency2000.co.il/Agency2000Ws_Test/agency2000ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Agency2000WSSoap12" binding="tns:Agency2000WSSoap12">
+      <soap12:address location="http://web27.agency2000.co.il/Agency2000Ws_Test/agency2000ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Agency2000WSHttpGet" binding="tns:Agency2000WSHttpGet">
+      <http:address location="http://web27.agency2000.co.il/Agency2000Ws_Test/agency2000ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Agency2000WSHttpPost" binding="tns:Agency2000WSHttpPost">
+      <http:address location="http://web27.agency2000.co.il/Agency2000Ws_Test/agency2000ws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

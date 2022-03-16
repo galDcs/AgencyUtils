@@ -1,0 +1,263 @@
+.order_summary {
+    float: right;
+    width: 100%;
+    box-shadow: 0px 0 2px 2px gainsboro;
+    margin: 1% 0;
+}
+
+.outbound_flight{
+    float: right;
+    width: 100%;
+}
+
+.way_header {
+    float: right;
+    width: 100%;
+    background-color: #c8e3ff;
+}
+
+.detail_header {
+    float: right;
+    width: 50%;
+    font-weight: 600;
+    padding: 0 1% 0 0;
+    margin: 0;
+}
+
+.detail_duration{
+    float: left;
+    width: 28%;
+    margin: 0;
+}
+
+/*.detail_duration:before {
+    content: "\f017";
+    font-family: "Font Awesome 5 Free";
+}*/
+
+.airline_img {
+    float: right;
+    width: 10%;
+}
+
+.airline_img img {
+    float: right;
+    width: 70%;
+    max-height: 103px;
+}
+
+.general_details {
+    float: right;
+    width: 80%;
+}
+
+.info_row {
+    float: right;
+    width: 100%;
+}
+
+.dep_details, .dest_details {
+    float: right;
+    width: 30%;
+    margin: 0 2% 0 0;
+}
+
+.way_details{
+    float: right;
+    width: 100%;
+}
+
+.dep_time, .dest_time {
+    float: right;
+    width: 20%;
+    margin: 0;
+}
+
+.specifics {
+    float: right;
+    width: 100%;
+    padding: 0 2% 0 0;
+}
+
+.dep_location, .dest_location {
+    color: #00CC94;
+}
+
+.leg_duration {
+    float: right;
+    width: 34%;
+}
+
+.leg_time {
+    color: #808080;
+    float: right;
+    width: 48%;
+}
+
+.flight_details_header label {
+    float: right;
+    width: 100%;
+    font-size: 40px;
+}
+
+.f_icon {
+    margin: 0 0 0 3%;
+    float: right;
+    width: 7%;
+}
+
+.info_row label {
+    color: #808080;
+    font-size: 13px;
+    margin: 0;
+    line-height: 20px;
+}
+
+.way_header_connection {
+    background-color: #eaeaea;
+}
+
+.extra_day {
+    color: #FF0033;
+    float: right;
+    width: 20%;
+}
+
+.flight_details_content {
+    float: right;
+    width: 100%;
+    box-shadow: 0px 0 2px 2px gainsboro;
+}
+
+.sum_header {
+    float: right;
+    width: 100%;
+    background-color: #0ABDE3;
+    line-height: 48px;
+    font-size: 28px;
+    color: #F5F5DC;
+    text-align: center;
+}
+
+.sum_flights_header, .sum_passengers_header {
+    float: right;
+    width: 100%;
+    font-weight: 600;
+    padding: 0 1% 0 0;
+}
+
+.mini_header_sum {
+    float: right;
+    width: 18%;
+    font-weight: 500;
+}
+
+.flight_sum_details, .pass_sum_details {
+    float: right;
+    width: 100%;
+    /*border-bottom-width: 2px;
+    border-bottom-color: gainsboro;
+    border-bottom-style: dotted;*/
+}
+
+/*.flight_sum_details label {
+    float: right;
+    width: 100%;
+    font-weight: 300;
+}*/
+
+.pass_details {
+    float: right;
+    width: 100%;
+}
+
+.sum_pass_header{
+    float: right;
+    width: 50%;
+}
+
+.sum_pass_price{
+    float: left;
+    width: 50%;
+}
+
+.total_sum {
+    float: right;
+    width: 100%;
+    border-top-style: dotted;
+    border-top-width: 2px;
+    border-top-color: gainsboro;
+}
+
+.total_header {
+    float: right;
+    width: 50%;
+    font-weight: 600;
+}
+
+.sum_price {
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-weight: 600;
+    font-size: 22px;
+    color: #067188;
+}
+
+.flight_container{
+    float: right;
+    width: 50%;
+}
+
+.passengers_container{
+    float: right;
+    width: 50%;
+}
+
+.btn_order_flight {
+    float: left;
+    width: 10%;
+    font-size: 28px;
+}
+
+.order_flight {
+    float: left;
+    width: 100%;
+}
+
+.remarks_header {
+    float: right;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.deal_remarks {
+    float: right;
+    width: 100%;
+    margin: 1% 0;
+    box-shadow: 0px 0 2px 2px gainsboro;
+    height: auto;
+}
+
+.remarks_content {
+    float: right;
+    width: 98%;
+    overflow-y: auto;
+    height: auto;
+    padding: 0 1% 0 0;
+}
+
+.passenger_sum {
+    float: right;
+    margin: 0 0 0 1%;
+}
+
+.passenger_conetnt{
+    float: right;
+}
+
+.info_icon {
+    float: right;
+    margin: 0 0 0 1%;
+}
